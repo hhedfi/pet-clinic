@@ -1,11 +1,13 @@
 package com.learn.springframework.petclinic.map;
 
 import com.learn.springframework.petclinic.model.Pet;
-import com.learn.springframework.petclinic.services.CrudService;
+import com.learn.springframework.petclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Long, Pet> implements CrudService<Long, Pet> {
+@Service
+public class PetServiceMap extends AbstractMapService<Long, Pet> implements PetService {
 
 
     @Override

@@ -1,7 +1,5 @@
 package com.learn.springframework.petclinic.bootstrap;
 
-import com.learn.springframework.petclinic.map.OwnerServiceMap;
-import com.learn.springframework.petclinic.map.VetServiceMap;
 import com.learn.springframework.petclinic.model.Owner;
 import com.learn.springframework.petclinic.model.Vet;
 import com.learn.springframework.petclinic.services.OwnerService;
@@ -15,9 +13,9 @@ public class LoadData implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public LoadData(){
-        ownerService=new OwnerServiceMap();
-        vetService= new VetServiceMap();
+    public LoadData(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -28,7 +26,7 @@ public class LoadData implements CommandLineRunner {
         owner1.setFirstName("Micheal");
         owner1.setLastName("Jackson");
 
-ownerService.save(owner1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
