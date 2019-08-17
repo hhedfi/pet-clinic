@@ -8,6 +8,6 @@ public class OwnerController {
 
     @RequestMapping({"/owners", "/owners/index", "/owners/index.html"})
     public String index(){
-        return "owner/index";
+        return "owners/index";
     }
 }
